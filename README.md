@@ -1,5 +1,5 @@
 Пример задачи
-
+```asm
 .586
 .model flat, stdcall
 
@@ -22,3 +22,4 @@ call ExitProcess@4
 
 text ends
 end start
+```
