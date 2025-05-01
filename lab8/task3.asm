@@ -11,11 +11,11 @@ data segment
 row EQU 3
 col EQU 3
 
-A DW 1,2,3,
-     4,5,6,
-     7,8,9
+A DB 1,0,1,
+     0,0,0,
+     1,1,1
 
-B DW ROW DUP(?); (6, 15, 24)
+B DB ROW DUP(?); 1,0,1
 
 data ends
 
@@ -23,24 +23,32 @@ text segment
 start:
 
 MOV ECX, row
-MOV ESI, 0
+MOV EDI, 0
 MOV EDX, 0
 
 L2: 
 MOV EBX, ECX
 MOV ECX, col
+MOV ESI, 0
 
-MOV AX, 0
+MOV AL, 0
 
 L1: 
-ADD AX, A[ESI]
+CMP A[ESI][EDI], 0
+JE ZERO
+INC AL
+jmp SKIP
+ZERO:
 
-ADD ESI, 2; A is word so +2
+INC ESI; A is word so +2
 LOOP L1
 
-MOV B[EDX], AX
-ADD EDX, 2
+SKIP:
 
+MOV B[EDX], AL
+INC EDX
+
+ADD EDI, col
 MOV ECX, EBX
 LOOP L2
 
