@@ -8,12 +8,13 @@ includelib c:\masm32\lib\kernel32.lib
 
 data segment
 
-row EQU 3
+row EQU 4
 col EQU 3
 
 A DB 1,6,7,
      2,5,9,
-     3,4,8
+     3,4,8,
+     2,5,8
 
 B DB ROW DUP(?); 3,6,9
 

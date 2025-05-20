@@ -9,11 +9,11 @@ includelib c:\masm32\lib\kernel32.lib
 data segment
 
 row EQU 3
-col EQU 3
+col EQU 4
 
-A DW 1,0,1,
-     0,0,1,
-     1,0,1
+A DW 1,0,1,0,
+     0,0,1,1,
+     1,0,1,0
 
 B DB ROW DUP(?); (1, 3, 0)
 

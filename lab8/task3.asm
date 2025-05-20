@@ -9,11 +9,11 @@ includelib c:\masm32\lib\kernel32.lib
 data segment
 
 row EQU 3
-col EQU 3
+col EQU 4
 
-A DB 1,0,1,
-     0,0,0,
-     1,1,1
+A DB 1,0,1,1,
+     0,0,0,0,
+     1,1,1,1
 
 B DB ROW DUP(?); 1,0,1
 
@@ -40,7 +40,7 @@ INC AL
 jmp SKIP
 ZERO:
 
-INC ESI; A is word so +2
+INC ESI
 LOOP L1
 
 SKIP:
