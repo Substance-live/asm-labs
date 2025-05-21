@@ -15,7 +15,7 @@ A DW 1,0,1,0,
      0,0,1,1,
      1,0,1,0
 
-B DB ROW DUP(?); (1, 3, 0)
+B DB col DUP(?); (1, 3, 0, 2)
 
 data ends
 
