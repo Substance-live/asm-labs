@@ -16,7 +16,7 @@ A DB 1,6,7,
      3,4,8,
      2,5,8
 
-B DB ROW DUP(?); 3,6,9
+B DB col DUP(?); 3,6,9
 
 data ends
 
