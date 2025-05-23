@@ -19,8 +19,8 @@ main:
     CMP AX, 5
     JL second
 
-    SUB BL, 2
-    INC BH
+    ADD BL, 2
+    DEC BH
     CALL pr
     JMP fin
 
