@@ -15,7 +15,7 @@ A DB 1,0,1,1,
      0,0,0,0,
      1,1,1,1
 
-B DB ROW DUP(?); 1,0,1
+B DB ROW DUP(0); 1,0,1
 
 data ends
 
@@ -31,12 +31,10 @@ MOV EBX, ECX
 MOV ECX, col
 MOV ESI, 0
 
-MOV AL, 0
-
 L1: 
 CMP A[ESI][EDI], 0
 JE ZERO
-INC AL
+INC B[EDX]
 jmp SKIP
 ZERO:
 
@@ -45,7 +43,6 @@ LOOP L1
 
 SKIP:
 
-MOV B[EDX], AL
 INC EDX
 
 ADD EDI, col

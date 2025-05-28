@@ -25,7 +25,6 @@ start:
 
 MOV ECX, col
 MOV ESI, 0
-MOV EDX, 0
 
 L2: MOV EBX, ECX
 MOV ECX, row
@@ -42,8 +41,7 @@ PASS:
 ADD EDI, col
 LOOP L1
 
-MOV B[EDX], AL
-INC EDX
+MOV B[ESI], AL
 
 INC ESI
 MOV ECX, EBX
